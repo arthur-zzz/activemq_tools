@@ -1,5 +1,15 @@
 #!/usr/bin/env python
 
+__author__ = "Dan Small"
+__credits__ = [{"Dr. Jan Müller":"https://github.com/nikipore"}]
+__version__ = "1.0.0"
+__license__ = "GPL"
+
+# This is an adaptation of nikipore's stompest transformer example. It was build to monitor dead letter queues and
+# attempt to put DLQ messages back on their primary consumer queues. Each time a message is retried, a header value is
+# checked and incremented to keep track of how many times that message has been retried. If it exceeds 10 retries, the
+# message is sent to an un-consumed error queue to be dealt with by a human later.
+
 import optparse
 import json
 import logging
