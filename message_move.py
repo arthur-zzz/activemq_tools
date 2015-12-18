@@ -4,7 +4,7 @@ __author__ = "Dan Small"
 __version__ = "1.0.0"
 __license__ = "GPL"
 
-# This tool simply performs a forced move of a designated number of messages from one queue to another.
+# This tool simply moves all messages in a queue to another queue.
 
 import sys
 import optparse
